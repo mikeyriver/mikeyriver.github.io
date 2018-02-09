@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 header {
 display: flex;
 align-items: center;
@@ -168,7 +172,7 @@ bottom: 4em
 	  "pic1 pic2"
 	  "pic3 pic4"
 	  "pic5 pic6";
-	max-height: 200%;
+	max-height: 240%;
 	}
 	
 	#pictures div{
@@ -189,15 +193,25 @@ bottom: 4em
 		position: relative; 
 		top: 2em
 	}
-	
-	.fot_pic {
-    position: relative;
-    left: 50%;
-    top: 15em;
 
+
+	.fot_pic{
+    left: 60%;
+    top: 10em;
+	}
+	
+	.fot_pic img {
+    width: 40%;
+ 	height: auto;
 	}	
+
 	.footlinks{
 	margin-left: 0%;
+	}
+
+	.footlinks img{
+	width: 15%;
+ 	height: auto;
 	}
 	
 	.text{
@@ -205,5 +219,9 @@ bottom: 4em
 	margin-left: 0; 
 	margin-top: 10%
 }
+
+	#nav-head{
+	margin-right: 10%;
+	}
 	
 }
