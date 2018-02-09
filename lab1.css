@@ -73,7 +73,6 @@ padding: 1em;
 }
 .second_middle{
 margin-left: 5%;
-margin-bottom: 15em;
 }
 
 #pictures{
@@ -112,14 +111,14 @@ display: inline;
 }
 
 .footlinks{
-margin-left: 60%;
+margin-left: 50%;
 }
 
 
 .fot_pic{
-position: absolute;
-left: 65em;
-top: 2000px;
+    position: relative;
+    left: 65%;
+    top: 150px;
 }
 
 #lol ul li{
@@ -131,4 +130,80 @@ display: flex;
 position: relative;
 left:0;
 
+}
+
+.pic1{
+}
+
+.pic2{
+position: relative; 
+bottom: 2em
+}
+
+.pic3{
+position: relative; 
+bottom: 4em
+}
+
+.pic4{
+}
+
+.pic5{
+position: relative; 
+bottom: 2em
+}
+
+.pic6{
+position: relative; 
+bottom: 4em
+}
+
+@media(max-width: 768px) {
+	#pictures{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+
+	grid-template-areas:
+	  "pic1 pic2"
+	  "pic3 pic4"
+	  "pic5 pic6";
+	max-height: 200%;
+	}
+	
+	#pictures div{
+	bottom: 0px;
+	}
+	
+	.pic2{
+		position: static; 
+		margin-top: 2em;
+	}
+	
+	.pic4{
+		position: relative; 
+		top: 2em
+	}
+	
+	.pic6{
+		position: relative; 
+		top: 2em
+	}
+	
+	.fot_pic {
+    position: relative;
+    left: 50%;
+    top: 150px;
+
+	}	
+	.footlinks{
+	margin-left: 0%;
+	}
+	
+	.text{
+	position: relative;
+	margin-left: 0; 
+	margin-top: 10%
+}
+	
 }
