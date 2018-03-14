@@ -7,7 +7,68 @@
 		
 		</header> 
 		<body>
+			<table align="center">
+				<tr>
+					<th class="qhead" ><p class="question">QUESTION</p></th>
+					<th class="qhead"><p class="question">QUESTION</p></th>
+					<th class="qhead"><p class="question">QUESTION</p></th>
+					<th class="qhead"><p class="question">QUESTION</p></th>
+					<th class="qhead"><p class="question">QUESTION</p></th>
+					<th class="qhead"><p class="question">QUESTION</p></th>
+				</tr>
+				<tr>
+					<td class="tdanswer"><p id="1" onclick="changeText(this, this.id)" >100,000</p></td>
+					<td class="tdanswer"><p id="2" onclick="changeText(this, this.id)" >100,000</p></td>
+					<td class="tdanswer"><p id="3" onclick="changeText(this, this.id)" >100,000</p></td>
+					<td class="tdanswer"><p id="4" onclick="changeText(this, this.id)" >100,000</p></td>
+					<td class="tdanswer"><p id="5" onclick="changeText(this, this.id)" >100,000</p></td>
+					<td class="tdanswer"><p id="6" onclick="changeText(this, this.id)" >100,000</p></td>
+				</tr>
+				<tr>
+					<td class="tdanswer"><p id="7" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="8" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="9" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="10" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="11" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="12" onclick="changeText(this, this.id)" >200,000</p></td>
+				</tr>
+				<tr>
+					<td class="tdanswer"><p id="13" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="14" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="15" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="16" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="17" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="18" onclick="changeText(this, this.id)" >200,000</p></td>
+				</tr>
+				<tr>
+					<td class="tdanswer"><p id="19" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="20" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="21" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="22" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="23" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="24" onclick="changeText(this, this.id)" >200,000</p></td>
+				</tr>
+				<tr>
+					<td class="tdanswer"><p id="25" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="26" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="27" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="28" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="29" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="30" onclick="changeText(this, this.id)" >200,000</p></td>
+				</tr>
+				<tr>
+					<td class="tdanswer"><p id="31" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="32" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="33" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="34" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="35" onclick="changeText(this, this.id)" >200,000</p></td>
+					<td class="tdanswer"><p id="36" onclick="changeText(this, this.id)" >200,000</p></td>
+				</tr>
+
+
+			</table>
 			
+			<!--
 			<div class ="wrapper">		
 				<div class="pane2">QUESTION</div>
 				<div class="pane2">QUESTION</div>
@@ -28,12 +89,13 @@
 				<div id="q3" class="panel"><p id="11" onclick="changeText(this, this.id)" >200,000</div>
 				<div id="q3" class="panel"><p id="12" onclick="changeText(this, this.id)" >200,000</div>
 			</div>
-			
+			-->
 	     	<p  style="color:white"id="lol"></p>
+			
 			<script>
 				var xhr = new XMLHttpRequest()
 				var lol = '[{"first_name" : "Butty"}]'
-				var url = "http://jservice.io/api/categories?count=20&offset=20"
+				var url = "http://jservice.io/api/categories?count=37&offset=37"
 				var new_json = []
 				xhr.onreadystatechange = function() {
 					if (this.readyState == 4 && this.status == 200) {
