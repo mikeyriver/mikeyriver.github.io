@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="lab2.css">
+	</head>
+	<body>
+		<header> 
+		
+		</header> 
+		<body>
+			
+			<div class ="wrapper">		
+				<div class="pane2">QUESTION</div>
+				<div class="pane2">QUESTION</div>
+				<div class="pane2">QUESTION</div>
+				<div class="pane2">QUESTION</div>
+				<div class="pane2">QUESTION</div>
+				<div class="pane2">QUESTION</div>
+				<div id="q1" class="panel"><p id="1" onclick="changeText(this, this.id)" >100,000</div>
+				<div id="q2" class="panel"><p id="2" onclick="changeText(this, this.id)" >100,000</div>
+				<div id="q3" class="panel"><p id="3" onclick="changeText(this, this.id)" >100,000</div>
+				<div id="q3" class="panel"><p id="4" onclick="changeText(this, this.id)" >100,000</div>
+				<div id="q1" class="panel"><p id="5" onclick="changeText(this, this.id)" >100,000</div>
+				<div id="q2" class="panel"><p id="6" onclick="changeText(this, this.id)" >100,000</div>
+				<div id="q3" class="panel"><p id="7" onclick="changeText(this, this.id)" >200,000</div>
+				<div id="q3" class="panel"><p id="8" onclick="changeText(this, this.id)" >200,000</div>
+				<div id="q1" class="panel"><p id="9" onclick="changeText(this, this.id)" >200,000</div>
+				<div id="q2" class="panel"><p id="10" onclick="changeText(this, this.id)" >200,000</div>
+				<div id="q3" class="panel"><p id="11" onclick="changeText(this, this.id)" >200,000</div>
+				<div id="q3" class="panel"><p id="12" onclick="changeText(this, this.id)" >200,000</div>
+			</div>
+			
+	     	<p  style="color:white"id="lol"></p>
+			<script>
+				var xhr = new XMLHttpRequest()
+				var lol = '[{"first_name" : "Butty"}]'
+				var url = "http://jservice.io/api/categories?count=20&offset=20"
+				var new_json = []
+				xhr.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						var lolo = JSON.parse(this.responseText)
+						console.log('Works')
+						test(lolo)
+						
+						new_json = lolo
+					}
+					else {
+						console.log('Nop')
+					}
+				}
+				
+						
+				xhr.open('GET', url , true)
+				xhr.send()
+				
+				function changeText(item, id) {
+					item.innerHTML = new_json[id].title;
+				}
+				
+				function test(arr) {
+					var out = ""
+					var i;
+					for(i = 0; i< arr.length; i++){
+						out += '<p>' + arr[i].title
+					}
+					document.getElementById("lol").innerHTML = out
+				}
+			</script>
+		
+		</body>
+		
+		<footer>
+		
+		</footer>
+	</body>
+</html>
