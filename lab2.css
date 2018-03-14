@@ -1,4 +1,27 @@
 
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 15px;
+}
+
+.qhead{
+		background-color: blue;
+}
+
+.qhead p {
+	color: white;
+}
+
+.tdanswer {
+	background-color: grey;
+}
+
+.tdanswer p{
+	color: white;
+}
+
 .wrapper{
 	max-width: 1256px;
 	margin: 0 auto;
