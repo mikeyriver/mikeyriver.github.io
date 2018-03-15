@@ -8,62 +8,38 @@
 		</header> 
 		<body>
 			<table align="center">
-				<tr>
+				<tr id="category">
+					<!--
 					<th class="qhead" ><p class="question">QUESTION</p></th>
 					<th class="qhead"><p class="question">QUESTION</p></th>
 					<th class="qhead"><p class="question">QUESTION</p></th>
 					<th class="qhead"><p class="question">QUESTION</p></th>
 					<th class="qhead"><p class="question">QUESTION</p></th>
-					<th class="qhead"><p class="question">QUESTION</p></th>
+					-->
 				</tr>
-				<tr>
+				<tr id="row1">
+					<!--
 					<td class="tdanswer"><p id="1" onclick="changeText(this, this.id)" >100,000</p></td>
 					<td class="tdanswer"><p id="2" onclick="changeText(this, this.id)" >100,000</p></td>
 					<td class="tdanswer"><p id="3" onclick="changeText(this, this.id)" >100,000</p></td>
 					<td class="tdanswer"><p id="4" onclick="changeText(this, this.id)" >100,000</p></td>
 					<td class="tdanswer"><p id="5" onclick="changeText(this, this.id)" >100,000</p></td>
 					<td class="tdanswer"><p id="6" onclick="changeText(this, this.id)" >100,000</p></td>
+					-->
 				</tr>
-				<tr>
-					<td class="tdanswer"><p id="7" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="8" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="9" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="10" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="11" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="12" onclick="changeText(this, this.id)" >200,000</p></td>
+				<tr id="row2">
 				</tr>
-				<tr>
-					<td class="tdanswer"><p id="13" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="14" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="15" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="16" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="17" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="18" onclick="changeText(this, this.id)" >200,000</p></td>
+				<tr id="row3">
 				</tr>
-				<tr>
-					<td class="tdanswer"><p id="19" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="20" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="21" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="22" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="23" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="24" onclick="changeText(this, this.id)" >200,000</p></td>
+				<tr id="row4">
 				</tr>
-				<tr>
-					<td class="tdanswer"><p id="25" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="26" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="27" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="28" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="29" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="30" onclick="changeText(this, this.id)" >200,000</p></td>
+				<tr id="row5">
 				</tr>
-				<tr>
-					<td class="tdanswer"><p id="31" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="32" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="33" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="34" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="35" onclick="changeText(this, this.id)" >200,000</p></td>
-					<td class="tdanswer"><p id="36" onclick="changeText(this, this.id)" >200,000</p></td>
+				<tr id="row6">
 				</tr>
+
+
+
 
 
 			</table>
@@ -93,29 +69,266 @@
 	     	<p  style="color:white"id="lol"></p>
 			
 			<script>
-				var xhr = new XMLHttpRequest()
 				var lol = '[{"first_name" : "Butty"}]'
-				var url = "http://jservice.io/api/categories?count=37&offset=37"
-				var new_json = []
-				xhr.onreadystatechange = function() {
-					if (this.readyState == 4 && this.status == 200) {
-						var lolo = JSON.parse(this.responseText)
-						console.log('Works')
-						test(lolo)
+				var url = "http://jservice.io/api/categories?count=5&offset=10"
+				
+							
+				var pop_array = []
+
+
+				let getData = function(url, json)
+				{ return new Promise(function(resolve,reject){
+						var xhr = new XMLHttpRequest()
 						
-						new_json = lolo
-					}
-					else {
-						console.log('Nop')
-					}
+						xhr.onload = function() {
+							if (xhr.status == 200) {
+								resolve(xhr.responseText)
+						//		test(lolo)	
+						//		new_json = lolo
+							}
+							else {
+								reject(xhr.responseText)
+								console.log('Nop')
+							}
+						}
+						
+						xhr.open('GET', url, true)
+						xhr.send()
+					})
 				}
 				
-						
-				xhr.open('GET', url , true)
-				xhr.send()
+     			new_urls = []
 				
-				function changeText(item, id) {
-					item.innerHTML = new_json[id].title;
+
+				
+				getData(url).then(function(res){
+					var column = []
+					var pop = JSON.parse(res)
+					pop_array = pop
+
+
+					 for(i = 0; i < pop_array.length; i++){
+						new_urls.push("http://jservice.io/api/category?id="+pop_array[i].id)
+					 }
+					 console.log(pop_array)
+					 var new_column = []
+					let requestsArray = []
+					
+					for(i = 0; i < new_urls.length; i++){
+						requestsArray.push(getData(new_urls[i]))
+					}
+					
+					Promise.all(requestsArray)
+					.then(res => {
+						console.log(res)
+							for(u = 0; u < res.length; u++)
+							{
+								for(l = 0; l < 5; l++){
+									wtf = JSON.parse(res[u])
+									var box = []
+									
+									box.push(JSON.stringify(wtf.clues[l].question))
+									box.push(JSON.stringify(wtf.clues[l].value))
+									box.push(JSON.stringify(wtf.clues[l].id))
+									column.push(box)
+								}
+							}					
+						console.log(column)
+						console.log(pop_array)	
+								
+
+						
+						for(i = 0; i < pop_array.length; i++){
+							var node = document.createElement("th")
+							node.classList.add("qhead")
+							var textnode = document.createTextNode(JSON.stringify(pop_array[i].title))
+							node.appendChild(textnode)
+							document.getElementById("category").appendChild(node)
+								
+							
+							
+							if(i == 0){
+								var counter = 0
+								for(l = 0; l < 5; l++){
+									if (l == 0){
+										var node = document.createElement("td")
+										node.classList.add("tdanswer")
+										node.setAttribute("id", column[i][2])
+										node.setAttribute("onclick", "changeText(this, this.id)")
+										var textnode = document.createTextNode(column[i][1])
+										node.appendChild(textnode)
+										document.getElementById("row1").appendChild(node)	
+										counter+=5
+									}
+									else{
+										var node = document.createElement("td")
+										node.classList.add("tdanswer")
+										node.setAttribute("id", column[i][2])
+										node.setAttribute("onclick", "changeText(this, this.id)")
+										var textnode = document.createTextNode(column[i+counter][1])
+										node.appendChild(textnode)
+										document.getElementById("row1").appendChild(node)	
+										counter+=5
+									}
+								}							
+							
+							}
+							else if(i == 1){
+								var counter = 0
+								for(l = 5; l < 10; l++){
+									if (counter == 0){
+										var node = document.createElement("td")
+										node.classList.add("tdanswer")
+										node.setAttribute("id", column[i][2])
+										node.setAttribute("onclick", "changeText(this, this.id)")
+										var textnode = document.createTextNode(column[i][1])
+										node.appendChild(textnode)
+										document.getElementById("row2").appendChild(node)	
+										counter+=5
+									}
+									else{
+										var node = document.createElement("td")
+										node.classList.add("tdanswer")
+										node.setAttribute("id", column[i][2])
+										node.setAttribute("onclick", "changeText(this, this.id)")
+										var textnode = document.createTextNode(column[i+counter][1])
+										node.appendChild(textnode)
+										document.getElementById("row2").appendChild(node)	
+										counter+=5
+									}
+								}							
+							
+							}
+							else if(i == 2){
+								var counter = 0
+								for(l = 10; l < 15; l++){
+									if (counter == 0){
+										var node = document.createElement("td")
+										node.classList.add("tdanswer")
+										node.setAttribute("id", column[i][2])
+										node.setAttribute("onclick", "changeText(this, this.id)")
+										var textnode = document.createTextNode(column[i][1])
+										node.appendChild(textnode)
+										document.getElementById("row3").appendChild(node)	
+										counter+=5
+									}
+									else{
+										var node = document.createElement("td")
+										node.classList.add("tdanswer")
+										node.setAttribute("id", column[i][2])
+										node.setAttribute("onclick", "changeText(this, this.id)")
+										var textnode = document.createTextNode(column[i+counter][1])
+										node.appendChild(textnode)
+										document.getElementById("row3").appendChild(node)	
+										counter+=5
+									}
+								}							
+							
+							}
+							else if(i == 3){
+								var counter = 0
+								for(l = 15; l < 20; l++){
+									if (counter == 0){
+										var node = document.createElement("td")
+										node.classList.add("tdanswer")
+										node.setAttribute("id", column[i][2])
+										node.setAttribute("onclick", "changeText(this, this.id)")
+										var textnode = document.createTextNode(column[i][1])
+										node.appendChild(textnode)
+										document.getElementById("row4").appendChild(node)	
+										counter+=5
+									}
+									else{
+										var node = document.createElement("td")
+										node.classList.add("tdanswer")
+										node.setAttribute("id", column[i][2])
+										node.setAttribute("onclick", "changeText(this, this.id)")
+										var textnode = document.createTextNode(column[i+counter][1])
+										node.appendChild(textnode)
+										document.getElementById("row4").appendChild(node)	
+										counter+=5
+									}
+								}							
+							
+							}
+							else if(i == 4){
+								var counter = 0	
+								for(l = 20; l < 25; l++){
+									if (counter == 0){
+										var node = document.createElement("td")
+										node.classList.add("tdanswer")
+										node.setAttribute("id", column[i][2])
+										node.setAttribute("onclick", "changeText(this, this.id)")
+										var textnode = document.createTextNode(column[i][1])
+										node.appendChild(textnode)
+										document.getElementById("row5").appendChild(node)	
+										counter+=5
+									}
+									else{
+										var node = document.createElement("td")
+										node.classList.add("tdanswer")
+										node.setAttribute("id", column[i][2])
+										node.setAttribute("onclick", "changeText(this, this.id)")
+										var textnode = document.createTextNode(column[i+counter][1])
+										node.appendChild(textnode)
+										document.getElementById("row5").appendChild(node)	
+										counter+=5
+									}
+								}							
+							
+							}
+							
+							else{
+							
+							}
+							
+						}
+					})
+				})
+				
+
+				function changeText(item, id) {					
+				getData(url).then(function(res){
+					var column = []
+					var pop = JSON.parse(res)
+					pop_array = pop
+
+
+					 for(i = 0; i < pop_array.length; i++){
+						new_urls.push("http://jservice.io/api/category?id="+pop_array[i].id)
+					 }
+					 console.log(pop_array)
+					 var new_column = []
+					let requestsArray = []
+					
+					for(i = 0; i < new_urls.length; i++){
+						requestsArray.push(getData(new_urls[i]))
+					}
+					
+					Promise.all(requestsArray)
+					.then(res => {
+						console.log(res)
+							for(u = 0; u < res.length; u++)
+							{
+								for(l = 0; l < 5; l++){
+									wtf = JSON.parse(res[u])
+									var box = []
+									
+									box.push(JSON.stringify(wtf.clues[l].question))
+									box.push(JSON.stringify(wtf.clues[l].value))
+									box.push(JSON.stringify(wtf.clues[l].id))
+									column.push(box)
+								}
+							}					
+
+						for(m = 0; m < column.length; m++)
+						{
+							if(column[m][2] == id){							
+								item.innerHTML = column[m][0];
+							}
+						}
+					})
+				})
 				}
 				
 				function test(arr) {
